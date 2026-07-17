@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — GAIWI</title>
+  <meta name="description" content="Peer-reviewed research publications from the Global AI Wellbeing Institute.">
+  <link rel="icon" type="image/png" href="./images/design_up/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /*.page-hero-bg       { background-image: url('../banner.png') !important; }*/
+    /*#site-footer::before { background-image: url('../Background.jpg') !important; }*/
+    #publications-page { padding-top: 72px; padding-bottom: 96px; }
+  </style>
+</head>
+<body class="full_page">
+
+  <nav id="site-nav"></nav>
+
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <h1><span>Publications</span></h1>
+      <p>Peer-reviewed research from our faculty, students, and collaborators.</p>
+    </div>
+  </section>
+
+  <section id="publications-page">
+    <div class="container">
+      <div class="pub-filter-bar" id="filter-bar"></div>
+      <div id="pub-groups"></div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="./js/data.js"></script>
+  <script src="js/news.js"></script>
+  <script src="./js/components.js"></script>
+  <script>
+    renderNav('Publications', '');
+    renderFooter('');
+
+    const pubs = GAIWI_DATA.publications;
+
+    // Group by year
+    const byYear = {};
+    pubs.forEach(p => {
+      if (!byYear[p.year]) byYear[p.year] = [];
+      byYear[p.year].push(p);
+    });
+    const years = Object.keys(byYear).sort((a, b) => b - a);
+
+    // Filter buttons
+    const bar = document.getElementById('filter-bar');
+    bar.innerHTML =
+      `<button class="filter-btn active" data-year="all">All Years</button>` +
+      years.map(y => `<button class="filter-btn" data-year="${y}">${y}</button>`).join('');
+
+    // Year groups
+    document.getElementById('pub-groups').innerHTML = years.map(y => `
+      <div class="pub-year-group" data-year="${y}">
+        <div class="pub-year-group-label">${y}</div>
+        <div class="pub-list">${byYear[y].map(pubItemHTML).join('')}</div>
+      </div>
+    `).join('');
+
+    // Filter logic
+    bar.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const sel = btn.dataset.year;
+      document.querySelectorAll('.pub-year-group').forEach(g => {
+        g.dataset.hidden = (sel !== 'all' && g.dataset.year !== sel) ? 'true' : 'false';
+      });
+    });
+  </script>
+
+</body>
+</html>

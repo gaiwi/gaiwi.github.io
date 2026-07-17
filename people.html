@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People — GAIWI</title>
+  <meta name="description" content="Meet the researchers, faculty, and students of the Global AI Wellbeing Institute.">
+  <link rel="icon" type="image/png" href="./images/design_up/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Override banner/bg paths for inner page */
+    /*.page-hero-bg       { background-image: url('./images/design/banner.png') !important; }*/
+    /*.event-thumb-placeholder { background-image: url('../images/design/banner.png') !important; }*/
+  </style>
+</head>
+<body class="full_page">
+
+  <nav id="site-nav"></nav>
+
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <h1>Our <span>People</span></h1>
+      <p>Researchers, faculty, and students working at the intersection of AI, culture, and human well-being.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="people-section-label">Faculty</div>
+      <div class="people-grid" id="faculty-grid"></div>
+
+      <div class="people-section-label">PhD Students</div>
+      <div class="people-grid" id="phd-grid"></div>
+
+        <div class="people-section-label">MSc Students</div>
+        <div class="people-grid" id="msc-grid"></div>
+
+      <div id="other-section" style="display:none">
+        <div class="people-section-label">Collaborators &amp; Affiliates</div>
+        <div class="people-grid" id="other-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="./js/data.js"></script>
+  <script src="js/news.js"></script>
+  <script src="./js/components.js"></script>
+  <script>
+    renderNav('People', '');
+    renderFooter('');
+
+    const faculty = GAIWI_DATA.people.filter(p => p.role === 'faculty');
+    const phd     = GAIWI_DATA.people.filter(p => p.role === 'phd');
+    const msc     = GAIWI_DATA.people.filter(p => p.role === 'msc');
+    const other   = GAIWI_DATA.people.filter(p => p.role === 'other');
+
+    document.getElementById('faculty-grid').innerHTML = faculty.map(personCardHTMLPPage).join('');
+    document.getElementById('phd-grid').innerHTML     = phd.map(personCardHTMLPPage).join('');
+    document.getElementById('msc-grid').innerHTML     = msc.map(personCardHTMLPPage).join('');
+
+    if (other.length) {
+      document.getElementById('other-section').style.display = 'block';
+      document.getElementById('other-grid').innerHTML = other.map(personCardHTMLPPage).join('');
+    }
+  </script>
+
+</body>
+</html>

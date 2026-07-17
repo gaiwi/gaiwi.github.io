@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAIWI — Global AI Wellbeing Institute</title>
+  <meta name="description" content="A research and engagement hub dedicated to understanding how AI shapes human well-being in diverse global contexts.">
+  <link rel="icon" type="image/png" href="./images/design_up/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="full_page">
+
+  <!-- NAV -->
+  <nav id="site-nav" aria-label="Main navigation"></nav>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <!-- Real gaiwi_title.png wordmark -->
+        <img
+          class="hero-title-img"
+          src="./images/design_up/gaiwi_title.png"
+          alt="Global AI Wellbeing Initiative"
+        >
+        <div class="hero-affiliations" id="hero-affils"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">About</p>
+        <h2 class="section-title">Who We Are</h2>
+      </div>
+      <div class="about-inner">
+        <div id="about-text" class="about-text"></div>
+<!--        <div id="focus-grid" class="focus-grid"></div>-->
+      </div>
+        <div class="section-header">
+            <h2 class="section-title">Focus Area</h2>
+        </div>
+        <div class="about-inner">
+            <div id="focus-grid" class="focus-grid"></div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ═══ EVENTS ══════════════════════════════════════════════ -->
+  <section id="events">
+    <div class="container">
+      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div>
+            <p class="section-eyebrow">Events</p>
+            <h2 class="section-title">Recent &amp; Upcoming</h2>
+          </div>
+          <a href="#" class="btn-outline">View All →</a>
+      </div>
+      <div id="events-grid" class="events-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PEOPLE PREVIEW ══════════════════════════════════════ -->
+  <section id="people-preview">
+    <div class="container">
+      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <p class="section-eyebrow">People</p>
+          <h2 class="section-title">Our Team</h2>
+        </div>
+        <a href="people.html" class="btn-outline">View All →</a>
+      </div>
+      <div id="people-grid" class="people-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH ════════════════════════════════════════════ -->
+  <section id="research">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Research</p>
+        <h2 class="section-title">Active Projects</h2>
+      </div>
+      <div id="research-grid" class="research-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PUBLICATIONS PREVIEW ════════════════════════════════ -->
+  <section id="publications-preview">
+    <div class="container">
+      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <p class="section-eyebrow">Publications</p>
+          <h2 class="section-title">Recent Work</h2>
+        </div>
+        <a href="publications.html" class="btn-outline">View All →</a>
+      </div>
+      <div id="pub-list" class="pub-list"></div>
+      <div class="view-all-wrap">
+        <a href="publications.html" class="btn-outline">See All Publications →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    renderNav('About');
+    renderFooter();
+
+    // ── HERO affiliations
+    document.getElementById('hero-affils').innerHTML =
+      GAIWI_DATA.hero.affiliations
+        .map(a => `<span class="hero-affil">${a}</span>`)
+        .join('');
+
+    // ── ABOUT
+    const about = GAIWI_DATA.about;
+    document.getElementById('about-text').innerHTML =
+      about.paragraphs.map(p => `<p>${p}</p>`).join('');
+
+    document.getElementById('focus-grid').innerHTML =
+      about.focusAreas.map(f => `
+        <div class="focus-card">
+          <div class="focus-icon">${f.icon}</div>
+          <h3>${f.title}</h3>
+          <p>${f.description}</p>
+        </div>
+      `).join('');
+
+    // ── EVENTS
+    document.getElementById('events-grid').innerHTML =
+      GAIWI_DATA.events.map(e => `
+        <div class="event-card">
+          <div class="event-thumb">
+            ${e.image
+              ? `<img src="${e.image}" alt="${e.title}">`
+              : `<div class="event-thumb-placeholder"></div>`}
+            <span class="event-badge">${e.type}</span>
+          </div>
+          <div class="event-body">
+            <div class="event-date">${e.date}</div>
+            <div class="event-title">${e.title}</div>
+            <div class="event-desc">${e.description}</div>
+          </div>
+        </div>
+      `).join('');
+
+    // ── PEOPLE PREVIEW (faculty first, up to 4)
+    const previewPeople = [
+      ...GAIWI_DATA.people.filter(p => p.role === 'faculty'),
+      ...GAIWI_DATA.people.filter(p => p.role !== 'faculty')
+    ].slice(0, 5);
+    document.getElementById('people-grid').innerHTML =
+      previewPeople.map(personCardHTML).join('');
+
+    // ── RESEARCH
+    document.getElementById('research-grid').innerHTML =
+      GAIWI_DATA.research.map(r => `
+        <div class="research-card">
+          <div class="research-img">
+            ${r.image ? `<img src="${r.image}" alt="${r.title}">` : '🔬'}
+          </div>
+          <div class="research-body">
+            <h3>${r.title}</h3>
+            <p>${r.description}</p>
+            ${r.investigators.length
+              ? `<div class="research-investigators">Investigators: ${r.investigators.join(', ')}</div>`
+              : ''}
+          </div>
+        </div>
+      `).join('');
+
+    // ── PUBLICATIONS (latest 3)
+    document.getElementById('pub-list').innerHTML =
+      GAIWI_DATA.publications.sort((a, b) => b.year - a.year).slice(0, 3).map(pubItemHTML).join('');
+
+
+    // Clean up any previous attempt first
+    const old = document.querySelector('.hero-slideshow');
+    if (old) old.remove();
+    const oldStyle = document.getElementById('hero-slide-style');
+    if (oldStyle) oldStyle.remove();
+
+    const style = document.createElement('style');
+    style.id = 'hero-slide-style';
+    style.textContent = `
+      .hero-slideshow {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      #hero:hover .hero-slideshow {
+        opacity: 1;
+      }
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+      .hero-slide.active {
+        opacity: 1;
+      }
+      .hero-bg::after { z-index: 2; }
+      .hero-content { z-index: 3 !important; }
+    `;
+    document.head.appendChild(style);
+
+    const images = [
+        // "./images/design_up/banner-hover.png",
+        "./images/design_up/banner-circle.png",
+        "./images/design_up/banner-blueflower.png",
+        "./images/design_up/banner-orangeflower.png"
+    ];
+
+    const slideshow = document.createElement('div');
+    slideshow.className = 'hero-slideshow';
+    slideshow.innerHTML = images.map((src, i) =>
+        `<div class="hero-slide ${i === 0 ? 'active' : ''}" style="background-image:url('${src}')"></div>`
+    ).join('');
+    document.querySelector('#hero').appendChild(slideshow);
+
+    let timer = null;
+    let current = 0;
+    const getSlides = () => slideshow.querySelectorAll('.hero-slide');
+
+    const stopSlides = () => {
+        clearInterval(timer);
+        timer = null;
+        getSlides().forEach(s => s.classList.remove('active'));
+        current = 0;
+    };
+
+    const startSlides = () => {
+        stopSlides();
+        getSlides()[current].classList.add('active');
+        timer = setInterval(() => {
+            getSlides()[current].classList.remove('active');
+            current = (current + 1) % getSlides().length;
+            getSlides()[current].classList.add('active');
+        }, 1500);
+    };
+
+    const hero = document.querySelector('#hero');
+    hero.addEventListener('mouseenter', startSlides);
+    hero.addEventListener('mouseleave', stopSlides);
+
+
+
+
+
+    // ============================================================
+    // Focus Area → Publications filter
+    // Paste into the browser console on index.html (or add to
+    // the inline <script> block right after the focus-grid render)
+    // ============================================================
+
+    (function () {
+        // 1. Map each focus area to keywords used to match publications.
+        //    Edit these keyword lists to control which papers show up.
+        const FOCUS_KEYWORDS = {
+            "AI & Well-Being":        ["mental health", "well-being", "wellbeing"],
+            "AI & Culture":           ["culture"],
+            "AI & Global Communities":["community", "global", "immigrant", "livestream"],
+            "AI & Governance":        ["governance", "policy"]
+        };
+
+        function matchPublications(focusTitle) {
+            const keywords = (FOCUS_KEYWORDS[focusTitle] || []).map(k => k.toLowerCase());
+            return GAIWI_DATA.publications.filter(p => {
+                const haystack = `${p.focus_area}`.toLowerCase();
+                return keywords.some(k => haystack.includes(k));
+            });
+        }
+
+        // 2. Create (or reuse) a panel under the focus grid to show results
+        let panel = document.getElementById('focus-pub-panel');
+        if (!panel) {
+            panel = document.createElement('div');
+            panel.id = 'focus-pub-panel';
+            panel.style.cssText = `
+              grid-column: 1 / -1;
+              margin-top: 1.5rem;
+              padding: 1.5rem;
+              background: var(--light-bg, #F9F7F2);
+              border: 1px solid var(--border, #E5E1D8);
+              border-radius: var(--radius-md, 14px);
+              display: none;
+            `;
+            document.getElementById('focus-grid').appendChild(panel);
+        }
+
+        function renderPanel(focusTitle, pubs) {
+            if (!pubs.length) {
+                panel.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <strong style="font-family:var(--font-display);font-size:0.85rem;">${focusTitle}</strong>
+          <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-muted,#5A5A5A);">No related publications yet.</p>
+      `;
+            } else {
+                panel.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+          <strong style="font-family:var(--font-display);font-size:0.85rem;">
+            Publications related to "${focusTitle}"
+          </strong>
+          <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
+        </div>
+        <div class="pub-list">
+          ${pubs.map(pubItemHTML).join('')}
+        </div>
+      `;
+            }
+            panel.style.display = 'block';
+            document.getElementById('focus-pub-close').addEventListener('click', () => {
+                panel.style.display = 'none';
+                document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+            });
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // 3. Wire up click handlers on the focus cards
+        document.querySelectorAll('.focus-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            const title = card.querySelector('h3').textContent.trim();
+
+            card.addEventListener('click', () => {
+                const isActive = card.classList.contains('active');
+                document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+
+                if (isActive) {
+                    panel.style.display = 'none';
+                    return;
+                }
+                card.classList.add('active');
+                renderPanel(title, matchPublications(title));
+            });
+        });
+
+        // 4. Small style hook for the active state
+        const style = document.createElement('style');
+        style.textContent = `
+    .focus-card.active { border-color: var(--gold, #F5C200) !important; box-shadow: 0 6px 24px rgba(245,194,0,0.18); }
+    .focus-card.active::before { transform: scaleX(1) !important; }
+  `;
+        document.head.appendChild(style);
+    })();
+
+
+
+
+    // ============================================================
+    // Auto-Scrolling News Block (3 visible at a time) — before #events
+    // Paste into the browser console on index.html
+    // ============================================================
+
+    (function () {
+        // Remove a previous version if you already ran this once
+        document.getElementById('news')?.remove();
+
+        // 1. News data — edit this array to add/update news items.
+
+        // 2. CSS
+  //       const style = document.createElement('style');
+  //       style.textContent = `
+  //
+  // `;
+        document.head.appendChild(style);
+
+        // 3. Build markup — duplicate the list so the loop is seamless
+        const section = document.createElement('section');
+        section.id = 'news';
+        section.innerHTML = `
+        <div class="container">
+          <div class="section-header">
+            <p class="section-eyebrow">News</p>
+            <h2 class="section-title">Latest Updates</h2>
+          </div>
+          <div class="news-scroll-wrap" id="news-wrap">
+            <div class="news-track" id="news-track"></div>
+          </div>
+        </div>
+      `;
+
+        const eventsSection = document.getElementById('events');
+        eventsSection.parentNode.insertBefore(section, eventsSection);
+
+        const track = document.getElementById('news-track');
+        const wrap  = document.getElementById('news-wrap');
+        const cardHTML = n => `
+            <div class="news-card">
+              <span class="news-tag">${n.tag}</span>
+              <div class="news-date">${n.date}</div>
+              <div class="news-title">${n.title}</div>
+              <div class="news-desc">${n.description}</div>
+            </div>
+          `;
+        // Duplicate the data set twice for a seamless infinite loop
+        track.innerHTML = NEWS_DATA.map(cardHTML).join('') + NEWS_DATA.map(cardHTML).join('');
+
+        // 4. Size cards so exactly 3 fit in the visible container
+        function sizeCards() {
+            const gap = 20; // 1.25rem
+            const containerWidth = wrap.clientWidth;
+            const cardWidth = (containerWidth - gap * 2) / 3;
+            document.documentElement.style.setProperty('--news-card-w', `${cardWidth}px`);
+            return cardWidth + gap;
+        }
+        let step = sizeCards();
+        window.addEventListener('resize', () => { step = sizeCards(); });
+
+        // 5. Continuous auto-scroll loop (marquee style)
+        let offset = 0;
+        let paused = false;
+        const speed = 0.5; // px per frame — increase for faster scroll
+
+        function tick() {
+            if (!paused) {
+                offset += speed;
+                const loopPoint = step * NEWS_DATA.length; // width of one full set
+                if (offset >= loopPoint) offset -= loopPoint;
+                track.style.transform = `translateX(-${offset}px)`;
+            }
+            requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+
+        // Pause on hover for readability
+        wrap.addEventListener('mouseenter', () => paused = true);
+        wrap.addEventListener('mouseleave', () => paused = false);
+    })();
+
+  </script>
+
+
+</body>
+</html>
