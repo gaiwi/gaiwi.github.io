@@ -12,9 +12,9 @@ const GAIWI_DATA = {
     links: [
       { label: "About",        href: "index.html#about" },
       { label: "Events",       href: "index.html#events" },
-      { label: "People",       href: "index.html#people-preview" },
+      { label: "People",       href: "people.html" },
       { label: "Projects",     href: "index.html#project" },
-      { label: "Publications", href: "index.html#publications-preview" },
+      { label: "Publications", href: "publications.html" },
     ]
   },
 

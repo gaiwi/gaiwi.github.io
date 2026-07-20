@@ -21,7 +21,11 @@ function renderNav(activeLabel, rootPath) {
         <ul class="nav-links" id="nav-links">
           ${d.links.map(l => {
         const id = l.href.split('#')[1];
-        return `<li><a href="#${id}" data-label="${l.label}" class="${l.label === activeLabel ? 'active' : ''}">${l.label}</a></li>`;
+        if (id == null){
+            const root = l.href.split('#')[0];
+            return `<li><a href="${root}" data-label="${l.label}" class="${l.label === activeLabel ? 'active' : ''}">${l.label}</a></li>`;
+        }
+        return `<li><a href="index.html#${id}" data-label="${l.label}" class="${l.label === activeLabel ? 'active' : ''}">${l.label}</a></li>`;
     }).join('')}
         </ul>
       </div>
