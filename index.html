@@ -198,17 +198,6 @@
         </div>
       `).join('');
 
-    // const publications = loadPublicationData();
-    //
-    // // ── PUBLICATIONS (latest 3)
-    // // document.getElementById('pub-list').innerHTML =
-    // //   publications.sort((a, b) => b.year - a.year).slice(0, 3).map(pubItemHTML).join('');
-    // document.getElementById('pub-list').innerHTML =
-    //     publications
-    //         .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
-    //         .slice(0, 3)
-    //         .map(pubItemHTML)
-    //         .join('');
 
     loadPublicationData().then(publications => {
         document.getElementById('pub-list').innerHTML =
@@ -216,111 +205,6 @@
                 .slice(0, 3).map(pubItemHTML).join('');
     });
 
-
-
-
-
-
-
-    // ============================================================
-    // Focus Area → Publications filter
-    // Paste into the browser console on index.html (or add to
-    // the inline <script> block right after the focus-grid render)
-    // ============================================================
-
-  //   (function () {
-  //       // 1. Map each focus area to keywords used to match publications.
-  //       //    Edit these keyword lists to control which papers show up.
-  //       const FOCUS_KEYWORDS = {
-  //           "AI & Well-Being":        ["mental health", "well-being", "wellbeing"],
-  //           "AI & Culture":           ["culture"],
-  //           "AI & Global Communities":["community", "global", "immigrant", "livestream"],
-  //           "AI & Governance":        ["governance", "policy"]
-  //       };
-  //
-  //       async function matchPublications(focusTitle) {
-  //           const keywords = (FOCUS_KEYWORDS[focusTitle] || []).map(k => k.toLowerCase());
-  //           const pubs = await loadPublicationData();
-  //
-  //           return pubs.filter(p => {
-  //               const haystack = `${p.focus_area}`.toLowerCase();
-  //               return keywords.some(k => haystack.includes(k));
-  //           });
-  //       }
-  //
-  //       // 2. Create (or reuse) a panel under the focus grid to show results
-  //       let panel = document.getElementById('focus-pub-panel');
-  //       if (!panel) {
-  //           panel = document.createElement('div');
-  //           panel.id = 'focus-pub-panel';
-  //           panel.style.cssText = `
-  //             grid-column: 1 / -1;
-  //             margin-top: 1.5rem;
-  //             padding: 1.5rem;
-  //             background: var(--light-bg, #F9F7F2);
-  //             border: 1px solid var(--border, #E5E1D8);
-  //             border-radius: var(--radius-md, 14px);
-  //             display: none;
-  //           `;
-  //           document.getElementById('focus-grid').appendChild(panel);
-  //       }
-  //
-  //       function renderPanel(focusTitle, pubs) {
-  //           if (!pubs.length) {
-  //               panel.innerHTML = `
-  //       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-  //         <strong style="font-family:var(--font-display);font-size:0.85rem;">${focusTitle}</strong>
-  //         <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
-  //       </div>
-  //       <p style="font-size:0.85rem;color:var(--text-muted,#5A5A5A);">No related publications yet.</p>
-  //     `;
-  //           } else {
-  //               panel.innerHTML = `
-  //       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-  //         <strong style="font-family:var(--font-display);font-size:0.85rem;">
-  //           Publications related to "${focusTitle}"
-  //         </strong>
-  //         <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
-  //       </div>
-  //       <div class="pub-list">
-  //         ${pubs.map(pubItemHTML).join('')}
-  //       </div>
-  //     `;
-  //           }
-  //           panel.style.display = 'block';
-  //           document.getElementById('focus-pub-close').addEventListener('click', () => {
-  //               panel.style.display = 'none';
-  //               document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
-  //           });
-  //           panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  //       }
-  //
-  //       // 3. Wire up click handlers on the focus cards
-  //       document.querySelectorAll('.focus-card').forEach(card => {
-  //           card.style.cursor = 'pointer';
-  //           const title = card.querySelector('h3').textContent.trim();
-  //
-  //           card.addEventListener('click', () => {
-  //               const isActive = card.classList.contains('active');
-  //               document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
-  //
-  //               if (isActive) {
-  //                   panel.style.display = 'none';
-  //                   return;
-  //               }
-  //               card.classList.add('active');
-  //               matchPublications(title).then(matched => renderPanel(title, matched));
-  //           });
-  //       });
-  //
-  //       // 4. Small style hook for the active state
-  //       const style = document.createElement('style');
-  //       style.textContent = `
-  //   .focus-card.active { border-color: var(--gold, #F5C200) !important; box-shadow: 0 6px 24px rgba(245,194,0,0.18); }
-  //   .focus-card.active::before { transform: scaleX(1) !important; }
-  // `;
-  //       document.head.appendChild(style);
-  //   })();
 
 
     (function () {

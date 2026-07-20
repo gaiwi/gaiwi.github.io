@@ -688,7 +688,7 @@ section { padding: var(--section-gap) 0; }
     position: absolute;
     inset: 0;
     margin-right: 15%;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
     background-image: url('../images/design_up/Footer.png');
     background-size: auto;
     background-repeat: no-repeat;
@@ -716,7 +716,7 @@ section { padding: var(--section-gap) 0; }
 }
 
 .footer-brand h4 {
-    margin-top: 2rem;
+    /*margin-top: 2rem;*/
     font-family: var(--font-display);
     font-size: 0.7rem;
     font-weight: 800;
@@ -755,14 +755,14 @@ section { padding: var(--section-gap) 0; }
 }
 .footer-social a:hover { border-color: var(--gold); color: var(--gold); background: rgba(245,194,0,0.06); }
 .footer-bottom {
+    padding-top: 0.6rem;
     border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.75rem;
-    font-size: 0.76rem;
+    font-size: 0.79rem;
     color: white;
 }
 .footer-affils {

@@ -88,21 +88,21 @@ function renderFooter(rootPath) {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="./images/design_up/GAIWI_logo.png" alt="GAIWI">
-          </div>
-          <p>A research and engagement hub dedicated to understanding how AI shapes human well-being in varied, situated contexts around the world — especially for the Global South.</p>
+<!--          <div class="footer-logo">-->
+<!--            <img src="./images/design_up/GAIWI_logo.png" alt="GAIWI">-->
+<!--          </div>-->
+<!--          <p>A research and engagement hub dedicated to understanding how AI shapes human well-being in varied, situated contexts around the world — especially for the Global South.</p>-->
         
         <h4>Connect</h4>
           <ul>
             <li><a href="mailto:${d.footer.contact}">${d.footer.contact}</a></li>
           </ul>
         
-        <h4>Follow us</h4>
+        <h4 style="margin-top: 2rem;">Follow us</h4>
         <div class="footer-social">
-            <a href="${d.footer.social.linkedin}" aria-label="LinkedIn" title="LinkedIn">in</a>
-            <a href="${d.footer.social.twitter}" aria-label="X/Twitter" title="X/Twitter">𝕏</a>
-            <a href="${d.footer.social.bluesky}" aria-label="Bluesky" title="Bluesky"><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="${d.footer.social.linkedin}" aria-label="LinkedIn" target="_blank" title="LinkedIn">in</a>
+            <a href="${d.footer.social.twitter}" aria-label="X/Twitter" target="_blank" title="X/Twitter">𝕏</a>
+            <a href="${d.footer.social.bluesky}" aria-label="Bluesky" target="_blank" title="Bluesky"><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.55208 1.20163C6.95953 2.947 9.54942 6.48542 10.5 8.38426V13.3996C10.5 13.2929 10.4573 13.4135 10.3655 13.6734C9.86934 15.0806 7.93144 20.5725 3.50011 16.1821C1.16681 13.8705 2.247 11.5589 6.49425 10.861C4.06448 11.2602 1.33284 10.6005 0.583406 8.01416C0.3675 7.27016 0 2.68742 0 2.06847C0 -1.03195 2.81498 -0.0574226 4.55208 1.20163ZM16.4479 1.20163C14.0405 2.947 11.4506 6.48542 10.5 8.38426V13.3996C10.5 13.2929 10.5427 13.4135 10.6345 13.6734C11.1307 15.0806 13.0686 20.5725 17.4999 16.1821C19.8332 13.8705 18.753 11.5589 14.5057 10.861C16.9355 11.2602 19.6672 10.6005 20.4166 8.01416C20.6325 7.27016 21 2.68742 21 2.06847C21 -1.03195 18.1853 -0.0574226 16.4479 1.20163Z" fill="#DCDCDD"/>
 </svg></a>
 <!-- 🦋-->
@@ -114,7 +114,7 @@ function renderFooter(rootPath) {
               ${d.hero.affiliations.map(a => `<span>${a}</span>`).join('')}
             </div>
             
-          <h4 style="margin-top: 3rem;">Navigate</h4>
+          <h4 style="margin-top: 3rem;">Quick Links</h4>
           <ul>
             ${d.nav.links.map(l => {
               const href = rootPath ? l.href.replace(/^pages\//, '') : l.href;

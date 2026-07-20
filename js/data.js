@@ -31,7 +31,7 @@ const GAIWI_DATA = {
   // ── ABOUT ───────────────────────────────────────────────
   about: {
     paragraphs: [
-      "The Global AI Wellbeing Institute (GAIWI) is a research and engagement hub dedicated to understanding how AI shapes human well-being within varied, situated contexts around the world, especially for the Global South." +
+      "The Global AI Wellbeing Initiative (GAIWI) is a research and engagement hub dedicated to understanding how AI shapes human well-being within varied, situated contexts around the world, especially for the Global South." +
       "GAIWI brings together students, researchers, and practitioners to advance responsible AI through reading group discussion, guest lectures, interdisciplinary research, and collaborative actions. " +
       // "We explore how AI can foster well-being, justice, and human flourishing while addressing the socio-technical, ethical, and cultural challenges in an age of AI. " +
       "We work toward a future where AI is accessible, inclusive, justice-oriented, and effective across diverse communities across the world.",
@@ -200,48 +200,14 @@ const GAIWI_DATA = {
     }
   ],
 
-  // ── PUBLICATIONS ────────────────────────────────────────
-  // Add new publications at the TOP of each year's section.
-  // award: optional award string
-  // publications: [
-  //     {
-  //         year: "2026",
-  //         title: "Enhancing Mental Health Counseling Support in Bangladesh using Culturally-Grounded Knowledge",
-  //         award: null,
-  //         authors: "Md Arid Hasan, Azhagu Meena SP, Aditya Khan, Abu Md Akteruzzaman Bhuiyan, Helal Uddin Ahmed, Joysree Debi, Fariq Sadeque, Annie En-Shiun Lee, Syed Ishtiaque Ahmed",
-  //         venue: "11th Workshop on Computational Linguistics and Clinical Psychology (CLPsych 2026)",
-  //         pdf: "#",
-  //         focus_area: "wellbeing",
-  //     },
-  //     {
-  //         year: "2025",
-  //         title: "From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge",
-  //         award: null,
-  //         authors: "Nafis Chowdhury, Moinul Haque, Anika Ahmed, Nazia Tasnim, Md Istiak Hossain Shihab, Sajjadur Rahman, Farig Sadeque",
-  //         venue: "Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia Pacific Chapter of the Association for Computational Linguistics",
-  //         pdf: "#",
-  //         focus_area: "culture"
-  //     },
-  //   {
-  //     year: "2026",
-  //     title: "Data Repair",
-  //     award: "Best Paper Honorable Mention Award",
-  //     authors: "ATM Mizanur Rahman, Syed Ishtiaque Ahmed, Sharifa Sultana",
-  //     venue: "CHI Conference on Human Factors in Computing Systems (CHI 2026)",
-  //     pdf: "#",
-  //       focus_area: "governance"
-  //   },
-  // ],
-
   // ── FOOTER ──────────────────────────────────────────────
   footer: {
     contact: "gaiwi@gmail.com",
     mailingList: "#",
     social: {
-      linkedin: "#",
-      twitter: "#",
-      bluesky: "#"
+      linkedin: "https://www.linkedin.com/company/gaiwi",
+      twitter: "https://x.com/GAIWIresearch",
+      bluesky: "https://bsky.app/profile/gaiwi.bsky.social"
     }
   }
-
 };
