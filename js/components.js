@@ -5,11 +5,11 @@
 
 // ── NAV ──────────────────────────────────────────────────────
 function renderNav(activeLabel, rootPath) {
-  rootPath = rootPath || '';
-  const d = GAIWI_DATA.nav;
-  const nav = document.getElementById('site-nav');
+    rootPath = rootPath || '';
+    const d = GAIWI_DATA.nav;
+    const nav = document.getElementById('site-nav');
 
-  nav.innerHTML = `
+    nav.innerHTML = `
     <div class="container">
       <div class="nav-inner">
         <a href="${rootPath}index.html" class="nav-logo">
@@ -20,23 +20,62 @@ function renderNav(activeLabel, rootPath) {
         </button>
         <ul class="nav-links" id="nav-links">
           ${d.links.map(l => {
-            const href = rootPath ? l.href.replace(/^pages\//, '') : l.href;
-            return `<li><a href="${rootPath}${href}" class="${l.label === activeLabel ? 'active' : ''}">${l.label}</a></li>`;
-          }).join('')}
+        const id = l.href.split('#')[1];
+        return `<li><a href="#${id}" data-label="${l.label}" class="${l.label === activeLabel ? 'active' : ''}">${l.label}</a></li>`;
+    }).join('')}
         </ul>
       </div>
     </div>
   `;
 
-  // Sticky scroll
-  const update = () => nav.classList.toggle('scrolled', window.scrollY > 50);
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+    // Sticky scroll
+    const update = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
 
-  // Burger toggle
-  document.getElementById('burger').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('open');
-  });
+    // Burger toggle — also close menu after tapping a link (mobile)
+    const navLinksEl = document.getElementById('nav-links');
+    document.getElementById('burger').addEventListener('click', () => {
+        navLinksEl.classList.toggle('open');
+    });
+    navLinksEl.addEventListener('click', e => {
+        if (e.target.tagName === 'A') navLinksEl.classList.remove('open');
+    });
+
+    // ── Scroll-spy: every nav link points to a section on this same page
+    const navLinks = nav.querySelectorAll('.nav-links a[data-label]');
+    const setActive = label => {
+        navLinks.forEach(a => a.classList.toggle('active', a.dataset.label === label));
+    };
+
+    const sections = d.links
+        .map(l => {
+            const id = l.href.split('#')[1];
+            const el = document.getElementById(id);
+            return el ? { id, label: l.label, el } : null;
+        })
+        .filter(Boolean);
+
+    if (sections.length) {
+        const observer = new IntersectionObserver(
+            entries => {
+                const visible = entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+                if (visible.length) {
+                    const match = sections.find(s => s.el === visible[0].target);
+                    if (match) setActive(match.label);
+                }
+            },
+            {
+                rootMargin: '-40% 0px -50% 0px', // trigger zone near vertical middle of viewport
+                threshold: 0
+            }
+        );
+
+        sections.forEach(s => observer.observe(s.el));
+    }
 }
 
 // ── FOOTER ────────────────────────────────────────────────────
@@ -163,4 +202,26 @@ function pubItemHTML(p) {
       ${p.pdf ? `<a href="${p.pdf}" class="pub-pdf" target="_blank" rel="noopener">PDF ↗</a>` : ''}
     </div>
   `;
+}
+
+
+async function loadPublicationData() {
+    const files = ['../data/Sharifa.json', '../data/Nusrat.json', "../data/Annie.json"];
+
+    try {
+        const fetchPromises = files.map(url => fetch(url).then(res => {
+            if (!res.ok) throw new Error(`Failed to load ${url}`);
+            return res.json();
+        }));
+
+        const results = await Promise.all(fetchPromises);
+
+        // Merge all files into a single flat array
+        const combinedData = results.flat();
+
+        // console.log("Combined data:", combinedData);
+        return combinedData;
+    } catch (error) {
+        console.error("One or more files failed to load:", error);
+    }
 }

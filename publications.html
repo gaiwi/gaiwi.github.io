@@ -44,40 +44,83 @@
     renderNav('Publications', '');
     renderFooter('');
 
-    const pubs = GAIWI_DATA.publications;
+    // const pubs = GAIWI_DATA.publications;
+    // const byYear = {};
 
-    // Group by year
-    const byYear = {};
-    pubs.forEach(p => {
-      if (!byYear[p.year]) byYear[p.year] = [];
-      byYear[p.year].push(p);
-    });
-    const years = Object.keys(byYear).sort((a, b) => b - a);
+    // loadPublicationData().then(pubs => pubs.forEach(p => {
+    //     if (!byYear[parseInt(p.year)]) byYear[parseInt(p.year)] = [];
+    //         byYear[parseInt(p.year)].push(p);
+    //     });
+    //
+    // // Group by year
+    // const years = Object.keys(byYear).sort((a, b) => b - a);
+    //
+    // console.log(years);
+    //
+    // // Filter buttons
+    // const bar = document.getElementById('filter-bar');
+    // bar.innerHTML =
+    //   `<button class="filter-btn active" data-year="all">All Years</button>` +
+    //   years.map(y => `<button class="filter-btn" data-year="${y}">${y}</button>`).join('');
+    //
+    // // Year groups
+    // document.getElementById('pub-groups').innerHTML = years.map(y => `
+    //   <div class="pub-year-group" data-year="${y}">
+    //     <div class="pub-year-group-label">${y}</div>
+    //     <div class="pub-list">${byYear[y].map(pubItemHTML).join('')}</div>
+    //   </div>
+    // `).join('');
+    //
+    // // Filter logic
+    // bar.addEventListener('click', e => {
+    //   const btn = e.target.closest('.filter-btn');
+    //   if (!btn) return;
+    //   bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    //   btn.classList.add('active');
+    //   const sel = btn.dataset.year;
+    //   document.querySelectorAll('.pub-year-group').forEach(g => {
+    //     g.dataset.hidden = (sel !== 'all' && g.dataset.year !== sel) ? 'true' : 'false';
+    //   });
+    // });
+    // );
 
-    // Filter buttons
-    const bar = document.getElementById('filter-bar');
-    bar.innerHTML =
-      `<button class="filter-btn active" data-year="all">All Years</button>` +
-      years.map(y => `<button class="filter-btn" data-year="${y}">${y}</button>`).join('');
+    loadPublicationData().then(pubs => {
+        // Group by year
+        const byYear = {};
+        pubs.forEach(p => {
+            const year = parseInt(p.year);
+            if (!byYear[year]) byYear[year] = [];
+            byYear[year].push(p);
+        });
 
-    // Year groups
-    document.getElementById('pub-groups').innerHTML = years.map(y => `
-      <div class="pub-year-group" data-year="${y}">
-        <div class="pub-year-group-label">${y}</div>
-        <div class="pub-list">${byYear[y].map(pubItemHTML).join('')}</div>
-      </div>
-    `).join('');
+        const years = Object.keys(byYear).sort((a, b) => b - a);
+        console.log(years);
 
-    // Filter logic
-    bar.addEventListener('click', e => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const sel = btn.dataset.year;
-      document.querySelectorAll('.pub-year-group').forEach(g => {
-        g.dataset.hidden = (sel !== 'all' && g.dataset.year !== sel) ? 'true' : 'false';
-      });
+        // Filter buttons
+        const bar = document.getElementById('filter-bar');
+        bar.innerHTML =
+            `<button class="filter-btn active" data-year="all">All Years</button>` +
+            years.map(y => `<button class="filter-btn" data-year="${y}">${y}</button>`).join('');
+
+        // Year groups
+        document.getElementById('pub-groups').innerHTML = years.map(y => `
+    <div class="pub-year-group" data-year="${y}">
+      <div class="pub-year-group-label">${y}</div>
+      <div class="pub-list">${byYear[y].map(pubItemHTML).join('')}</div>
+    </div>
+  `).join('');
+
+        // Filter logic
+        bar.addEventListener('click', e => {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+            bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const sel = btn.dataset.year;
+            document.querySelectorAll('.pub-year-group').forEach(g => {
+                g.dataset.hidden = (sel !== 'all' && g.dataset.year !== sel) ? 'true' : 'false';
+            });
+        });
     });
   </script>
 

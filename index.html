@@ -17,19 +17,35 @@
   <nav id="site-nav" aria-label="Main navigation"></nav>
 
   <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<!--  <section id="hero">-->
+<!--    <div class="hero-bg"></div>-->
+<!--    <div class="container">-->
+<!--      <div class="hero-content">-->
+<!--        &lt;!&ndash; Real gaiwi_title.png wordmark &ndash;&gt;-->
+<!--        <img-->
+<!--          class="hero-title-img"-->
+<!--          src="./images/design_up/gaiwi_title.png"-->
+<!--          alt="Global AI Wellbeing Initiative"-->
+<!--        >-->
+<!--        <div class="hero-affiliations" id="hero-affils"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
   <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <!-- Real gaiwi_title.png wordmark -->
-        <img
-          class="hero-title-img"
-          src="./images/design_up/gaiwi_title.png"
-          alt="Global AI Wellbeing Initiative"
-        >
-        <div class="hero-affiliations" id="hero-affils"></div>
+      <div class="fig-flower-blue"></div>
+      <div class="fig-flower-orange"></div>
+      <div class="fig-soft-overlay"></div>
+      <div class="fig-circle fig-circle-1"></div>
+      <div class="fig-circle fig-circle-2"></div>
+      <div class="fig-circle fig-circle-3"></div>
+      <div class="fig-radial-overlay"></div>
+      <div class="fig-title">
+          <img class="fig-title-vector" src="./images/design_up/gaiwi_title.png" alt="Global AI Wellbeing">
+<!--          <div class="fig-institute-text">Institute</div>-->
+
+          <div class="fig-affils" id="hero-affils"></div>
       </div>
-    </div>
   </section>
 
   <!-- ═══ ABOUT ═══════════════════════════════════════════════ -->
@@ -81,10 +97,10 @@
   </section>
 
   <!-- ═══ RESEARCH ════════════════════════════════════════════ -->
-  <section id="research">
+  <section id="project">
     <div class="container">
       <div class="section-header">
-        <p class="section-eyebrow">Research</p>
+        <p class="section-eyebrow">Projects</p>
         <h2 class="section-title">Active Projects</h2>
       </div>
       <div id="research-grid" class="research-grid"></div>
@@ -182,85 +198,25 @@
         </div>
       `).join('');
 
-    // ── PUBLICATIONS (latest 3)
-    document.getElementById('pub-list').innerHTML =
-      GAIWI_DATA.publications.sort((a, b) => b.year - a.year).slice(0, 3).map(pubItemHTML).join('');
+    // const publications = loadPublicationData();
+    //
+    // // ── PUBLICATIONS (latest 3)
+    // // document.getElementById('pub-list').innerHTML =
+    // //   publications.sort((a, b) => b.year - a.year).slice(0, 3).map(pubItemHTML).join('');
+    // document.getElementById('pub-list').innerHTML =
+    //     publications
+    //         .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
+    //         .slice(0, 3)
+    //         .map(pubItemHTML)
+    //         .join('');
+
+    loadPublicationData().then(publications => {
+        document.getElementById('pub-list').innerHTML =
+            publications.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
+                .slice(0, 3).map(pubItemHTML).join('');
+    });
 
 
-    // Clean up any previous attempt first
-    const old = document.querySelector('.hero-slideshow');
-    if (old) old.remove();
-    const oldStyle = document.getElementById('hero-slide-style');
-    if (oldStyle) oldStyle.remove();
-
-    const style = document.createElement('style');
-    style.id = 'hero-slide-style';
-    style.textContent = `
-      .hero-slideshow {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-      }
-      #hero:hover .hero-slideshow {
-        opacity: 1;
-      }
-      .hero-slide {
-        position: absolute;
-        inset: 0;
-        background-size: contain;
-        background-position: right;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 0.8s ease;
-      }
-      .hero-slide.active {
-        opacity: 1;
-      }
-      .hero-bg::after { z-index: 2; }
-      .hero-content { z-index: 3 !important; }
-    `;
-    document.head.appendChild(style);
-
-    const images = [
-        // "./images/design_up/banner-hover.png",
-        "./images/design_up/banner-circle.png",
-        "./images/design_up/banner-blueflower.png",
-        "./images/design_up/banner-orangeflower.png"
-    ];
-
-    const slideshow = document.createElement('div');
-    slideshow.className = 'hero-slideshow';
-    slideshow.innerHTML = images.map((src, i) =>
-        `<div class="hero-slide ${i === 0 ? 'active' : ''}" style="background-image:url('${src}')"></div>`
-    ).join('');
-    document.querySelector('#hero').appendChild(slideshow);
-
-    let timer = null;
-    let current = 0;
-    const getSlides = () => slideshow.querySelectorAll('.hero-slide');
-
-    const stopSlides = () => {
-        clearInterval(timer);
-        timer = null;
-        getSlides().forEach(s => s.classList.remove('active'));
-        current = 0;
-    };
-
-    const startSlides = () => {
-        stopSlides();
-        getSlides()[current].classList.add('active');
-        timer = setInterval(() => {
-            getSlides()[current].classList.remove('active');
-            current = (current + 1) % getSlides().length;
-            getSlides()[current].classList.add('active');
-        }, 1500);
-    };
-
-    const hero = document.querySelector('#hero');
-    hero.addEventListener('mouseenter', startSlides);
-    hero.addEventListener('mouseleave', stopSlides);
 
 
 
@@ -272,30 +228,143 @@
     // the inline <script> block right after the focus-grid render)
     // ============================================================
 
+  //   (function () {
+  //       // 1. Map each focus area to keywords used to match publications.
+  //       //    Edit these keyword lists to control which papers show up.
+  //       const FOCUS_KEYWORDS = {
+  //           "AI & Well-Being":        ["mental health", "well-being", "wellbeing"],
+  //           "AI & Culture":           ["culture"],
+  //           "AI & Global Communities":["community", "global", "immigrant", "livestream"],
+  //           "AI & Governance":        ["governance", "policy"]
+  //       };
+  //
+  //       async function matchPublications(focusTitle) {
+  //           const keywords = (FOCUS_KEYWORDS[focusTitle] || []).map(k => k.toLowerCase());
+  //           const pubs = await loadPublicationData();
+  //
+  //           return pubs.filter(p => {
+  //               const haystack = `${p.focus_area}`.toLowerCase();
+  //               return keywords.some(k => haystack.includes(k));
+  //           });
+  //       }
+  //
+  //       // 2. Create (or reuse) a panel under the focus grid to show results
+  //       let panel = document.getElementById('focus-pub-panel');
+  //       if (!panel) {
+  //           panel = document.createElement('div');
+  //           panel.id = 'focus-pub-panel';
+  //           panel.style.cssText = `
+  //             grid-column: 1 / -1;
+  //             margin-top: 1.5rem;
+  //             padding: 1.5rem;
+  //             background: var(--light-bg, #F9F7F2);
+  //             border: 1px solid var(--border, #E5E1D8);
+  //             border-radius: var(--radius-md, 14px);
+  //             display: none;
+  //           `;
+  //           document.getElementById('focus-grid').appendChild(panel);
+  //       }
+  //
+  //       function renderPanel(focusTitle, pubs) {
+  //           if (!pubs.length) {
+  //               panel.innerHTML = `
+  //       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+  //         <strong style="font-family:var(--font-display);font-size:0.85rem;">${focusTitle}</strong>
+  //         <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
+  //       </div>
+  //       <p style="font-size:0.85rem;color:var(--text-muted,#5A5A5A);">No related publications yet.</p>
+  //     `;
+  //           } else {
+  //               panel.innerHTML = `
+  //       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+  //         <strong style="font-family:var(--font-display);font-size:0.85rem;">
+  //           Publications related to "${focusTitle}"
+  //         </strong>
+  //         <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
+  //       </div>
+  //       <div class="pub-list">
+  //         ${pubs.map(pubItemHTML).join('')}
+  //       </div>
+  //     `;
+  //           }
+  //           panel.style.display = 'block';
+  //           document.getElementById('focus-pub-close').addEventListener('click', () => {
+  //               panel.style.display = 'none';
+  //               document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+  //           });
+  //           panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  //       }
+  //
+  //       // 3. Wire up click handlers on the focus cards
+  //       document.querySelectorAll('.focus-card').forEach(card => {
+  //           card.style.cursor = 'pointer';
+  //           const title = card.querySelector('h3').textContent.trim();
+  //
+  //           card.addEventListener('click', () => {
+  //               const isActive = card.classList.contains('active');
+  //               document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+  //
+  //               if (isActive) {
+  //                   panel.style.display = 'none';
+  //                   return;
+  //               }
+  //               card.classList.add('active');
+  //               matchPublications(title).then(matched => renderPanel(title, matched));
+  //           });
+  //       });
+  //
+  //       // 4. Small style hook for the active state
+  //       const style = document.createElement('style');
+  //       style.textContent = `
+  //   .focus-card.active { border-color: var(--gold, #F5C200) !important; box-shadow: 0 6px 24px rgba(245,194,0,0.18); }
+  //   .focus-card.active::before { transform: scaleX(1) !important; }
+  // `;
+  //       document.head.appendChild(style);
+  //   })();
+
+
     (function () {
-        // 1. Map each focus area to keywords used to match publications.
-        //    Edit these keyword lists to control which papers show up.
         const FOCUS_KEYWORDS = {
-            "AI & Well-Being":        ["mental health", "well-being", "wellbeing"],
-            "AI & Culture":           ["culture"],
-            "AI & Global Communities":["community", "global", "immigrant", "livestream"],
-            "AI & Governance":        ["governance", "policy"]
+            "AI & Well-Being":         ["mental health", "well-being", "wellbeing"],
+            "AI & Culture":            ["culture", "ai & culture"],
+            "AI & Global Communities": ["community", "global", "immigrant", "livestream"],
+            "AI & Governance":         ["governance", "policy"]
         };
 
-        function matchPublications(focusTitle) {
-            const keywords = (FOCUS_KEYWORDS[focusTitle] || []).map(k => k.toLowerCase());
-            return GAIWI_DATA.publications.filter(p => {
-                const haystack = `${p.focus_area}`.toLowerCase();
+        // Case/whitespace-insensitive keyword lookup so the card title
+        // doesn't have to match the key character-for-character
+        function keywordsFor(title) {
+            const norm = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
+            const key = Object.keys(FOCUS_KEYWORDS).find(k => norm(k) === norm(title));
+            return (FOCUS_KEYWORDS[key] || []).map(k => k.toLowerCase());
+        }
+
+        // Cache the data so we don't re-fetch on every card click
+        let pubsPromise = null;
+        function getPubs() {
+            if (!pubsPromise) pubsPromise = loadPublicationData();
+            return pubsPromise;
+        }
+
+        async function matchPublications(focusTitle) {
+            const keywords = keywordsFor(focusTitle);
+            const pubs = await getPubs();
+            pubs.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
+            return pubs.filter(p => {
+                const haystack = `${p.category || ''} ${p.title || ''}`.toLowerCase();
                 return keywords.some(k => haystack.includes(k));
             });
         }
 
-        // 2. Create (or reuse) a panel under the focus grid to show results
-        let panel = document.getElementById('focus-pub-panel');
-        if (!panel) {
-            panel = document.createElement('div');
-            panel.id = 'focus-pub-panel';
-            panel.style.cssText = `
+        function init() {
+            const grid = document.getElementById('focus-grid');
+            if (!grid) return; // page doesn't have the focus section
+
+            let panel = document.getElementById('focus-pub-panel');
+            if (!panel) {
+                panel = document.createElement('div');
+                panel.id = 'focus-pub-panel';
+                panel.style.cssText = `
               grid-column: 1 / -1;
               margin-top: 1.5rem;
               padding: 1.5rem;
@@ -303,68 +372,71 @@
               border: 1px solid var(--border, #E5E1D8);
               border-radius: var(--radius-md, 14px);
               display: none;
+              max-height: 420px;
+              overflow-y: auto;
             `;
-            document.getElementById('focus-grid').appendChild(panel);
-        }
-
-        function renderPanel(focusTitle, pubs) {
-            if (!pubs.length) {
-                panel.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-          <strong style="font-family:var(--font-display);font-size:0.85rem;">${focusTitle}</strong>
-          <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
-        </div>
-        <p style="font-size:0.85rem;color:var(--text-muted,#5A5A5A);">No related publications yet.</p>
-      `;
-            } else {
-                panel.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-          <strong style="font-family:var(--font-display);font-size:0.85rem;">
-            Publications related to "${focusTitle}"
-          </strong>
-          <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
-        </div>
-        <div class="pub-list">
-          ${pubs.map(pubItemHTML).join('')}
-        </div>
-      `;
+                grid.appendChild(panel);
             }
-            panel.style.display = 'block';
-            document.getElementById('focus-pub-close').addEventListener('click', () => {
-                panel.style.display = 'none';
-                document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+
+            let lastRequestedTitle = null; // guards against out-of-order async renders
+
+            function renderPanel(focusTitle, pubs) {
+                const header = `
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                <strong style="font-family:var(--font-display);font-size:0.85rem;">
+                  ${pubs.length ? `Publications related to "${focusTitle}"` : focusTitle}
+                </strong>
+                <button id="focus-pub-close" style="background:none;border:none;cursor:pointer;font-size:1rem;">✕</button>
+              </div>`;
+                const body = pubs.length
+                    ? `<div class="pub-list">${pubs.map(pubItemHTML).join('')}</div>`
+                    : `<p style="font-size:0.85rem;color:var(--text-muted,#5A5A5A);">No related publications yet.</p>`;
+
+                panel.innerHTML = header + body;
+                panel.style.display = 'block';
+                document.getElementById('focus-pub-close').addEventListener('click', () => {
+                    panel.style.display = 'none';
+                    document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+                });
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            document.querySelectorAll('.focus-card').forEach(card => {
+                const h3 = card.querySelector('h3');
+                if (!h3) return;
+                card.style.cursor = 'pointer';
+                const title = h3.textContent.trim();
+
+                card.addEventListener('click', () => {
+                    const isActive = card.classList.contains('active');
+                    document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
+
+                    if (isActive) {
+                        panel.style.display = 'none';
+                        return;
+                    }
+                    card.classList.add('active');
+                    lastRequestedTitle = title;
+                    matchPublications(title).then(matched => {
+                        if (lastRequestedTitle === title) renderPanel(title, matched);
+                    });
+                });
             });
-            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            const style = document.createElement('style');
+            style.textContent = `
+          .focus-card.active { border-color: var(--gold, #F5C200) !important; box-shadow: 0 6px 24px rgba(245,194,0,0.18); }
+          .focus-card.active::before { transform: scaleX(1) !important; }
+        `;
+            document.head.appendChild(style);
         }
 
-        // 3. Wire up click handlers on the focus cards
-        document.querySelectorAll('.focus-card').forEach(card => {
-            card.style.cursor = 'pointer';
-            const title = card.querySelector('h3').textContent.trim();
-
-            card.addEventListener('click', () => {
-                const isActive = card.classList.contains('active');
-                document.querySelectorAll('.focus-card').forEach(c => c.classList.remove('active'));
-
-                if (isActive) {
-                    panel.style.display = 'none';
-                    return;
-                }
-                card.classList.add('active');
-                renderPanel(title, matchPublications(title));
-            });
-        });
-
-        // 4. Small style hook for the active state
-        const style = document.createElement('style');
-        style.textContent = `
-    .focus-card.active { border-color: var(--gold, #F5C200) !important; box-shadow: 0 6px 24px rgba(245,194,0,0.18); }
-    .focus-card.active::before { transform: scaleX(1) !important; }
-  `;
-        document.head.appendChild(style);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     })();
-
-
 
 
     // ============================================================
@@ -383,7 +455,7 @@
   //       style.textContent = `
   //
   // `;
-        document.head.appendChild(style);
+  //       document.head.appendChild(style);
 
         // 3. Build markup — duplicate the list so the loop is seamless
         const section = document.createElement('section');

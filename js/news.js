@@ -1,33 +1,27 @@
 
 const NEWS_DATA = [
     {
-        date: "07.10.2026",
+        date: "06.2026",
         tag: "Award",
-        title: "\"Data Repair\" wins Best Paper Honorable Mention at CHI 2026",
-        description: "Congratulations to ATM Mizanur Rahman, Syed Ishtiaque Ahmed, and Sharifa Sultana."
+        title: "Team Receives <span style='color:blue;'>CAD 1.8 Million Wellcome Trust Grant for Responsible AI in Mental Health Care</span>",
+        description: "Our team has received a <strong>CAD 1.8 million Wellcome Trust grant</strong> for a two-year project on the ethical use of AI in mental health care in Bangladesh. Led by <strong>Professor Ishtiaque Ahmed</strong>, the project partners with mPower Social Enterprises Ltd. and SAJIDA Foundation."
     },
     {
-        date: "06.20.2026",
+        date: "05.18.2026",
         tag: "Publication",
-        title: "New CLPsych 2026 paper on culturally-grounded mental health counseling",
-        description: "Md Arid Hasan and collaborators publish work on AI support in Bangladesh."
+        title: "Paper Accepted at CLPsych 2026 Workshop",
+        description: "Our group has publish work titled <strong>Enhancing Mental Health Counseling Support in Bangladesh using Culturally-Grounded Knowledge.</strong>"
     },
     {
-        date: "06.01.2026",
+        date: "05.10.2026",
         tag: "Announcement",
         title: "GAIWI reading group series continues through the summer",
         description: "Weekly sessions exploring AI, culture, and well-being — open to all."
     },
     {
-        date: "05.15.2026",
-        tag: "People",
-        title: "Welcoming new PhD students to the GAIWI research group",
-        description: "Excited to grow our team working across HCI, NLP, and global well-being."
-    },
-    {
-        date: "04.28.2026",
-        tag: "Event",
-        title: "GAIWI co-hosts panel on AI and immigrant communities",
-        description: "A cross-institution discussion on livestreaming ecologies and safety."
+        date: "04.13.2026",
+        tag: "Award",
+        title: "<span style='color: blue;'>Data Repair</span> wins Best Paper Honorable Mention at CHI 2026",
+        description: "Congratulations to <strong>ATM Mizanur Rahman, Syed Ishtiaque Ahmed, and Sharifa Sultana</strong>."
     }
 ];

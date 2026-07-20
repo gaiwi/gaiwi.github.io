@@ -1,0 +1,74 @@
+[
+  {
+    "year": "2026",
+    "title": "Making the Sacred: Craft, Ritual, and Computational Imaginaries in Postcolonial HCI",
+    "award": "",
+    "authors": "Nusrat Jahan Mim, Prajna Upadhyay, Priyanka Paul, Dipanjan Chakrabarty",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2026)",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3772318.3791119",
+    "category": "AI & Culture"
+  },
+  {
+    "year": "2025",
+    "title": "Collective Agency in Art-making: Towards Community-centric Design of Text-to-Image (T2I) AI Tools",
+    "award": "",
+    "authors": "Abdullah Hasan Safir, Noshin Tahsin, Pratyasha Saha, Dipannita Nandi, Zulkarin Jahangir, Cecily Morrison, Syed Ishtiaque Ahmed, Nusrat Jahan Mim",
+    "venue": "AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025)",
+    "pdf": "https://ojs.aaai.org/index.php/AIES/article/view/36710/38848",
+    "category": "AI & Culture"
+  },
+  {
+    "year": "2025",
+    "title": "Resilient Hope: Identity, Extensibility, and Freedom as Design and Policy Considerations in Social Computing",
+    "award": "",
+    "authors": "Abdullah Hasan Safir, Nusrat Jahan Mim, SM Taiabul Haque, Syed Ishtiaque Ahmed",
+    "venue": "ACM Journal on Computing and Sustainable Societies (COMPASS 2025)",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3764665",
+    "category": "AI & Governance"
+  },
+  {
+    "year": "2024",
+    "title": "In-Between Visuals and Visible: The Impacts of Text-to-Image Generative AI Tools on Digital Image-making Practices in the Global South",
+    "award": "",
+    "authors": "Nusrat Jahan Mim, Dipannita Nandi, Sadaf Sumyia Khan, Arundhuti Dey, Syed Ishtiaque Ahmed",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2024)",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3613904.3641951",
+    "category": "AI & Culture"
+  },
+  {
+    "year": "2024",
+    "title": "Computing and the Stigmatized: Trust, Surveillance, and Space Politics with the Sex Workers in Bangladesh",
+    "award": "Best Paper Award",
+    "authors": "Pratyasha Saha, Nadira Nowsher, Ayien Utshob Baidya, Nusrat Jahan Mim, Syed Ishtiaque Ahmed, SM Taiabul Haque",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2024)",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642005",
+    "category": "AI & Well-Being"
+  },
+  {
+    "year": "2021",
+    "title": "Gospels of Modernity: Digital Cattle Markets, Urban Religiosity, and Secular Computing in the Global South",
+    "award": "Best Paper Honorable Mention Award",
+    "authors": "Nusrat Jahan Mim",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2021)",
+    "pdf": "https://doi.org/10.1145/3411764.3445259",
+    "category": "AI & Culture"
+  },
+  {
+    "year": "2020",
+    "title": "Others' Images: Online Social Media, Architectural Improvisations, and Spatial Marginalization in Bangladesh",
+    "award": "Best Paper Honorable Mention Award",
+    "authors": "Nusrat Jahan Mim, Syed Ishtiaque Ahmed",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2020)",
+    "pdf": "https://doi.org/10.1145/3313831.3376572",
+    "category": "AI & Global Communities"
+  },
+  {
+    "year": "2015",
+    "title": "Residual Mobilities: Infrastructural Displacement and Post-colonial Computing in Bangladesh",
+    "award": "",
+    "authors": "Syed Ishtiaque Ahmed, Nusrat Jahan Mim, Steven J Jackson",
+    "venue": "CHI Conference on Human Factors in Computing Systems (CHI 2015)",
+    "pdf": "https://doi.org/10.1145/2702123.2702573",
+    "category": "AI & Global Communities"
+  }
+]

@@ -1,0 +1,308 @@
+[
+  {
+    "year": "2022",
+    "title": "Pre-Trained Multilingual Sequence-to-Sequence Models: A Hope for Low-Resource Language Translation?",
+    "award": null,
+    "authors": "En-Shiun Annie Lee, Sarubi Thillainathan, Shravan Nayak, Surangika Ranathunga, David Ifeoluwa Adelani, Ruisi Su, Arya D. McCarthy",
+    "venue": "Findings of the Association for Computational Linguistics: ACL 2022",
+    "pdf": "https://aclanthology.org/2022.findings-acl.6.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2023",
+    "title": "Neural Machine Translation for Low-resource Languages: A Survey",
+    "award": null,
+    "authors": "Surangika Ranathunga, En-Shiun Annie Lee, Marjana Prifti Skenduli, Ravi Shekhar, Mehreen Alam, Rishemjit Kaur",
+    "venue": "ACM Computing Surveys, Volume 55, Issue 11",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3567592",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2023",
+    "title": "Leveraging Auxiliary Domain Parallel Data in Intermediate Task Fine-tuning for Low-resource Translation",
+    "award": null,
+    "authors": "Shravan Nayak, Surangika Ranathunga, Sarubi Thillainathan, Rikki Hung, Anthony Rinaldi, Yining Wang, Jonah Mackey, Andrew Ho, En-Shiun Annie Lee",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2306.01382",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2024",
+    "title": "SIB-200: A Simple, Inclusive, and Big Evaluation Dataset for Topic Classification in 200+ Languages and Dialects",
+    "award": null,
+    "authors": "David Ifeoluwa Adelani, Hannah Liu, Xiaoyu Shen, Nikita Vassilyev, Jesujoba O. Alabi, Yanke Mao, Haonan Gao, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "pdf": "https://aclanthology.org/2024.eacl-long.14.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2024",
+    "title": "Predicting Machine Translation Performance on Low-Resource Languages: The Role of Domain Similarity",
+    "award": null,
+    "authors": "Eric Khiu, Hasti Toossi, David Anugraha, Jinyu Liu, Jiaxu Li, Juan Armando Parra Flores, Leandro Arcos Roman, A. Seza Dogruöz, En-Shiun Annie Lee",
+    "venue": "Findings of the Association for Computational Linguistics: EACL 2024",
+    "pdf": "https://aclanthology.org/2024.findings-eacl.100.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2024",
+    "title": "Enhancing Taiwanese Hokkien Dual Translation by Exploring and Standardizing of Four Writing Systems",
+    "award": null,
+    "authors": "Bo-Han Lu, Yi-Hsuan Lin, En-Shiun Annie Lee, Richard Tzong-Han Tsai",
+    "venue": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    "pdf": "https://aclanthology.org/2024.lrec-main.538.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2024",
+    "title": "Unlocking Parameter-Efficient Fine-Tuning for Low-Resource Language Translation",
+    "award": null,
+    "authors": "Tong Su, Xin Peng, Sarubi Thillainathan, David Guzmán, Surangika Ranathunga, En-Shiun Annie Lee",
+    "venue": "Findings of the Association for Computational Linguistics: NAACL 2024",
+    "pdf": "https://aclanthology.org/2024.findings-naacl.263.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2024",
+    "title": "A Reproducibility Study on Quantifying Language Similarity: The Impact of Missing Values in the URIEL Knowledge Base",
+    "award": null,
+    "authors": "Hasti Toossi, Guo Qing Huai, Jinyu Liu, Eric Khiu, A. Seza Dogruöz, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 4: Student Research Workshop)",
+    "pdf": "https://aclanthology.org/2024.naacl-srw.25.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "ProxyLM: Predicting Language Model Performance on Multilingual Tasks via Proxy Models",
+    "award": null,
+    "authors": "David Anugraha, Genta Indra Winata, Chenyue Li, Patrick Amadeus Irawan, En-Shiun Annie Lee",
+    "venue": "Findings of the Association for Computational Linguistics: NAACL 2025",
+    "pdf": "https://aclanthology.org/2025.findings-naacl.106.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2024",
+    "title": "Empowering the Future with Multilinguality and Language Diversity",
+    "award": null,
+    "authors": "En-Shiun Annie Lee, Kosei Uemura, Syed Mekael Wasti, Mason Shipton",
+    "venue": "Proceedings of the Sixth Workshop on Teaching NLP",
+    "pdf": "https://aclanthology.org/2024.teachingnlp-1.10.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "WORLDCUISINES: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines",
+    "award": "Best Theme Paper",
+    "authors": "Genta Indra Winata, Frederikus Hudi, Patrick Amadeus Irawan, David Anugraha, Rifki Afina Putri, Yutong Wang, Adam Nohejl, Ubaidillah Ariq Prathama, Nedjma Ousidhoum, Afifa Amriani, Anar Rzayev, Anirban Das, Ashmari Pramodya, Aulia Adila, Bryan Wilie, Candy Olivia Mawalim, Ching Lam Cheng, Daud Abolade, Emmanuele Chersoni, Enrico Santus, Fariz Ikhwantri, Garry Kuwanto, Hanyang Zhao, Haryo Akbarianto Wibowo, Holy Lovenia, Jan Christian Blaise Cruz, Jan Wira Gotama Putra, Junho Myung, Lucky Susanto, Maria Angelica Riera Machin, Marina Zhukova, Michael Anugraha, Muhammad Farid Adilazuarda, Natasha Santosa, Peerat Limkonchotiwat, Raj Dabre, Rio Alexander Audino, Samuel Cahyawijaya, Shi-Xiong Zhang, Stephanie Yulia Salim, Yi Zhou, Yinxuan Gui, David Ifeoluwa Adelani, En-Shiun Annie Lee, Shogo Okada, Ayu Purwarianti, Alham Fikri Aji, Taro Watanabe, Derry Tanti Wijaya, Alice Oh, Chong-Wah Ngo",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    "pdf": "https://aclanthology.org/2025.naacl-long.167.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2024",
+    "title": "AFRIINSTRUCT: Instruction Tuning of African Languages for Diverse Tasks",
+    "award": null,
+    "authors": "Kosei Uemura, Mahe Chen, Alex Pejovic, Chika Maduabuchi, Yifei Sun, En-Shiun Annie Lee",
+    "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "pdf": "https://aclanthology.org/2024.findings-emnlp.793.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "Exploiting Domain-Specific Parallel Data on Multilingual Language Models for Low-resource Language Translation",
+    "award": null,
+    "authors": "Surangika Ranathunga, Shravan Nayak, En-Shiun Annie Lee, Xin Peng, Shih-Ting Cindy Huang, Yuchen Zeng, Yanke Mao, Tong Su, Yun-Hsiang Ray Chan, Songchen Yuan, Anthony Rinaldi",
+    "venue": "ACM Transactions on Asian and Low-Resource Language Information Processing, Volume 25, Issue 4",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3800681",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "URIEL+: Enhancing Linguistic Inclusion and Usability in a Typological and Multilingual Knowledge Base",
+    "award": null,
+    "authors": "Aditya Khan, Mason Shipton, David Anugraha, Kaiyao Duan, Phuong H. Hoang, Eric Khiu, A. Seza Dogruöz, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 31st International Conference on Computational Linguistics",
+    "pdf": "https://aclanthology.org/2025.coling-main.463.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+    "award": "Outstanding Paper",
+    "authors": "David Ifeoluwa Adelani, Jessica Ojo, Israel Abebe Azime, Jian Yun Zhuang, Jesujoba O. Alabi, Xuanli He, Millicent Ochieng, Sara Hooker, Andiswa Bukula, En-Shiun Annie Lee, Chiamaka Chukwuneke, Happy Buzaaba, Blessing Sibanda, Godson Kalipe, Jonathan Mukiibi, Salomon Kabongo, Foutse Yuehgoh, Mmasibidi Setaka, Lolwethu Ndolela, Nkiruka Odu, Rooweither Mabuya, Shamsuddeen Hassan Muhammad, Salomey Osei, Sokhar Samb, Tadesse Kebede Guge, Tombekai Vangoni Sherman, Pontus Stenetorp",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    "pdf": "https://aclanthology.org/2025.naacl-long.139.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "INJONGO: A Multicultural Intent Detection and Slot-filling Dataset for 16 African Languages",
+    "award": null,
+    "authors": "Hao Yu, Jesujoba O. Alabi, Andiswa Bukula, Jian Yun Zhuang, En-Shiun Annie Lee, Tadesse Kebede Guge, Israel Abebe Azime, Happy Buzaaba, Blessing Kudzaishe Sibanda, Godson K. Kalipe, Jonathan Mukiibi, Salomon Kabongo Kabenamualu, Mmasibidi Setaka, Lolwethu Ndolela, Nkiruka Odu, Rooweither Mabuya, Shamsuddeen Hassan Muhammad, Salomey Osei, Sokhar Samb, Juliet W. Murage, Dietrich Klakow, David Ifeoluwa Adelani",
+    "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "pdf": "https://aclanthology.org/2025.acl-long.464.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2025",
+    "title": "ALIGNFREEZE: Navigating the Impact of Realignment on the Layers of Multilingual Models Across Diverse Languages",
+    "award": null,
+    "authors": "Steve Bakos, Félix Gaschi, David Guzmán, Riddhi More, Kelly Chutong Li, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers)",
+    "pdf": "https://aclanthology.org/2025.naacl-short.48.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Benchmarking Interpretability in Healthcare Using Pattern Discovery and Disentanglement",
+    "award": null,
+    "authors": "Pei-Yuan Zhou, Amane Takeuchi, Fernando Martinez-Lopez, Malikeh Ehghaghi, Andrew K. C. Wong, En-Shiun Annie Lee",
+    "venue": "Bioengineering",
+    "pdf": "https://www.mdpi.com/2306-5354/12/3/308",
+    "focus_area": "AI & Well-Being"
+  },
+  {
+    "year": "2024",
+    "title": "A Multilingual Dataset (MultiMWP) and Benchmark for Math Word Problem Generation",
+    "award": null,
+    "authors": "Omega Gamage, Surangika Ranathunga, Annie (En-Shiun) Lee, Xiao Sun, Aryaveer Singh, Marjana Prifti Skenduli, Mehreen Alam, et al.",
+    "venue": "TechRxiv (preprint)",
+    "pdf": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.173152534.48337192",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Beyond Vanilla Fine-Tuning: Leveraging Multistage, Multilingual, and Domain-Specific Methods for Low-Resource Machine Translation",
+    "award": null,
+    "authors": "Sarubi Thillainathan, Songchen Yuan, En-Shiun Annie Lee, Sanath Jayasena, Surangika Ranathunga",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2503.22582",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Learning Low-Resource Languages Through NLP-Driven Flashcards: A Case Study of Hokkien in Language Learning Applications",
+    "award": null,
+    "authors": "Tai Zhang, Lucie Yang, Erin Chen, Karen Riani, Jessica Zipf, Mariana Shimabukuro, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (System Demonstrations)",
+    "pdf": "https://aclanthology.org/2025.naacl-demo.26.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2025",
+    "title": "ATAIGI: An AI-Powered Multimodal Learning App Leveraging Generative Models for Low-Resource Taiwanese Hokkien",
+    "award": null,
+    "authors": "Yun-Hsin Chu, Shuai Zhu, Shou-Yi Hung, Bo-Ting Lin, En-Shiun Annie Lee, Richard Tzong-Han Tsai",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (System Demonstrations)",
+    "pdf": "https://aclanthology.org/2025.naacl-demo.2.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2025",
+    "title": "TranslationCorrect: A Unified Framework for Machine Translation Post-Editing with Predictive Error Assistance",
+    "award": null,
+    "authors": "Syed Mekael Wasti, Shou-Yi Hung, Christopher Collins, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    "pdf": "https://aclanthology.org/2025.acl-demo.53.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Less is More: The Effectiveness of Compact Typological Language Representations",
+    "award": null,
+    "authors": "York Hay Ng, Phuong Hanh Hoang, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    "pdf": "https://aclanthology.org/2025.emnlp-main.1310.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "SiniticMTError: A Machine Translation Dataset with Error Annotations for Sinitic Languages",
+    "award": null,
+    "authors": "Hannah Liu, Junghyun Min, En-Shiun Annie Lee, Ethan Yue Heng Cheung, Shou-Yi Hung, Elsie Chan, Shiyao Qian, Runtong Liang, Kimlan Huynh, Wing Yu Yip, York Hay Ng, TSZ Fung Yau, Ka leng Charlotte Lo, You-Wei Wu, Richard Tzong-Han Tsai",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2509.20557",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "MR3: Multilingual Rubric-Agnostic Reward Reasoning Models",
+    "award": null,
+    "authors": "David Anugraha, Shou-Yi Hung, Zilu Tang, Annie En-Shiun Lee, Derry Tanti Wijaya, Genta Indra Winata",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2510.01146",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "Modality Matching Matters: Calibrating Language Distances for Cross-Lingual Transfer in URIEL+",
+    "award": null,
+    "authors": "York Hay Ng, Aditya Khan, Xiang Lu, Matteo Salloum, Michael Zhou, Phuong Hanh Hoang, A. Seza Dogruöz, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics, Volume 4: Student Research Workshop",
+    "pdf": "https://aclanthology.org/2026.eacl-srw.8.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Simple Additions, Substantial Gains: Expanding Scripts, Languages, and Lineage Coverage in URIEL+",
+    "award": null,
+    "authors": "Mason Shipton, York Hay Ng, Aditya Khan, Phuong Hanh Hoang, Xiang Lu, A. Seza Doğruöz, En-Shiun Annie Lee",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2510.27183",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2025",
+    "title": "Rethinking what Matters: Effective and Robust Multilingual Realignment for Low-Resource Languages",
+    "award": null,
+    "authors": "Quang Phuoc Nguyen, David Anugraha, Felix Gaschi, Jun Bin Cheng, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics",
+    "pdf": "https://aclanthology.org/2025.ijcnlp-long.102.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG",
+    "award": null,
+    "authors": "David Anugraha, Patrick Amadeus Irawan, Anshul Singh, En-Shiun Annie Lee, Genta Indra Winata",
+    "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Anugraha_M4-RAG_A_Massive-Scale_Multilingual_Multi-Cultural_Multimodal_RAG_CVPR_2026_paper.pdf",
+    "focus_area": "AI & culture"
+  },
+  {
+    "year": "2026",
+    "title": "MERLIN: Multi-Stage Curriculum Alignment for Multilingual Encoder-LLM Integration in Cross-Lingual Reasoning",
+    "award": null,
+    "authors": "Kosei Uemura, David Guzmán, Quang Phuoc Nguyen, Jesujoba Oluwadara Alabi, En-Shiun Annie Lee, David Ifeoluwa Adelani",
+    "venue": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics, Volume 1: Long Papers",
+    "pdf": "https://aclanthology.org/2026.eacl-long.277.pdf",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "OasisSimp: An Open-source Asian-English Sentence Simplification Dataset",
+    "award": null,
+    "authors": "Hannah Liu, Muxin Tian, Iqra Ali, Haonan Gao, Qiaoyiwen Wu, Blair Yang, Uthayasanker Thayasivam, En-Shiun Annie Lee, Pakawat Nakwijit, Surangika Ranathunga, Ravi Shekhar",
+    "venue": "arXiv preprint",
+    "pdf": "https://arxiv.org/pdf/2603.14111",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "Multilingual Game Dialogue Translation using Large Language Models: A Performance Survey",
+    "award": null,
+    "authors": "Quang Phuoc Nguyen, Cristiano Politowski, Labib Rahman, En-Shiun Annie Lee",
+    "venue": "Proceedings of the ACM/IEEE 10th International Workshop on Games and Software Engineering (GAS '26)",
+    "pdf": "https://dl.acm.org/doi/pdf/10.1145/3786171.3788386",
+    "focus_area": "AI & global communities"
+  },
+  {
+    "year": "2026",
+    "title": "Dynamic Meta-Metrics: Source-Sentence Conditioned Weighting for MT Evaluation",
+    "award": null,
+    "authors": "Luke Zhang, Justin Vasselli, Aditya Khan, York Hay Ng, En-Shiun Annie Lee",
+    "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "pdf": "https://aclanthology.org/2026.acl-srw.80.pdf",
+    "focus_area": "AI & global communities"
+  }
+]
